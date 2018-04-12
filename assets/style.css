@@ -1,0 +1,160 @@
+body, html {
+  background: #58595b;
+  color: white;
+  font-family: Geneva, Verdana, sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+body p, html p {
+  line-height: 1.5;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2, h3 {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 0.5em;
+}
+
+p {
+  margin: 0;
+  font-size: 1em;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 10%;
+}
+
+a {
+  font-size: 1.2em;
+  font-weight: 700;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  border-bottom: 1px solid;
+}
+
+a:active {
+  border-bottom: 2px solid;
+}
+
+header {
+  position: relative;
+  z-index: 3;
+  height: 100vh;
+  background-color: #414042;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 600px) {
+  header {
+    height: 93vh;
+  }
+}
+
+nav ul {
+  display: inline-block;
+  justify-content: space-between;
+  height: 100%;
+}
+@media screen and (max-width: 599px) {
+  nav {
+    position: fixed;
+    z-index: 2;
+    transform: translateX(-165px);
+    top: 20px;
+    left: 0;
+    width: 200px;
+  }
+}
+@media screen and (min-width: 600px) {
+  nav {
+    height: 7vh;
+  }
+  nav ul {
+    display: flex;
+    background: #414042;
+  }
+  nav li {
+    padding: 25% 0;
+  }
+  nav a {
+    font-size: 1.5em;
+  }
+}
+
+section {
+  min-height: 120vh;
+}
+
+footer p {
+  padding: 10px 0;
+  background: #939598;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 550px;
+  padding: 0 30px;
+}
+@media screen and (max-width: 599px) {
+  .container {
+    margin-left: 35px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .container {
+    max-width: 800px;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.nested {
+  display: none;
+}
+
+.heading {
+  text-align: center;
+}
+
+@media screen and (max-width: 599px) {
+  .sidebar-background {
+    width: 200px;
+    display: inline-block;
+    position: absolute;
+    transform: translateX(-165px);
+    z-index: 1;
+    height: 120%;
+  }
+}
+
+#blue {
+  background: #54c0dc;
+}
+
+#orange {
+  background: #f3ad1d;
+}
+
+#red {
+  background: #ee8d76;
+}
+
+#purple {
+  background: #a967aa;
+}

@@ -1,0 +1,177 @@
+$navbar: #414042;
+$background: #58595b;
+$light-neutral: #939598;
+$accent-blue: #54c0dc;
+$accent-green: #a7c539;
+$accent-red: #ee8d76;
+$accent-purple: #a967aa;
+$accent-orange: #f3ad1d;
+$text-color: white;
+$text-font-size: 1em;
+
+@mixin phone-screen {
+    @media screen and (max-width: 599px) { @content; }
+}
+
+@mixin small {
+    @media screen and (min-width: 600px) { @content; }
+}
+
+@mixin medium {
+    @media screen and (min-width: 900px) { @content; }
+}
+
+@mixin large {
+    @media screen and (min-width: 1200px) { @content; }
+}
+
+body, html {
+    background: $background;
+    color: $text-color;
+    font-family: Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    p {
+        line-height: 1.5;
+    }
+}
+
+h1 {
+    margin: 0;
+}
+
+h2, h3 {
+    display: inline-block;
+    border-radius: 20px;
+    padding: .5em;
+}
+
+p {
+    margin: 0;
+    font-size: $text-font-size;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 10%;
+}
+
+a {
+    font-size: 1.2em;
+    font-weight: 700;
+    display: block;
+    color: $text-color;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $text-color;
+    border-bottom: 1px solid;
+}
+
+a:active {
+    border-bottom: 2px solid;
+}
+
+header {
+    position: relative;
+    z-index: 3;
+    height: 100vh;
+    background-color: $navbar;
+    color: $text-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include small {
+        height: 93vh;
+    }
+}
+
+nav {
+    ul {
+        display: inline-block;
+        justify-content: space-between;
+        height: 100%;
+    }
+    @include phone-screen {
+        position: fixed;
+        z-index: 2;
+        transform: translateX(-165px);
+        top: 20px;
+        left: 0;
+        width: 200px;
+    }
+    @include small {
+        ul {
+            display: flex;
+            background: $navbar;
+        }
+        li {
+            padding: 25% 0;
+        }
+        a {
+            font-size: 1.5em;
+        }
+        height: 7vh;
+    }
+}
+
+section {
+    min-height: 120vh;
+}
+
+footer p {
+    padding: 10px 0;
+    background: $light-neutral;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 550px;
+    padding: 0 30px;
+    @include phone-screen {
+        margin-left: 35px;
+    }
+    @include small {
+        max-width: 800px;
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+.nested {
+    display: none;
+}
+
+.heading {
+    text-align: center;
+}
+
+.sidebar-background {
+    @include phone-screen {
+        width: 200px;
+        display: inline-block;
+        position: absolute;
+        transform: translateX(-165px);
+        z-index: 1;
+        height: 120%;
+    }
+}
+
+#blue {
+    background: $accent-blue;
+}
+#orange {
+    background: $accent-orange;
+}
+#red {
+    background: $accent-red;
+}
+#purple {
+    background: $accent-purple;
+}

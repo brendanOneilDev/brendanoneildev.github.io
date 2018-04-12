@@ -1,0 +1,1 @@
+var navbar = document.querySelector("nav");

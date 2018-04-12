@@ -1,0 +1,27 @@
+{
+  "name": "brendanoneildev.github.io",
+  "version": "1.0.0",
+  "description": "Personal website portfolio for Brendan O'Neil",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "sass src/assets/style.scss assets/style.css",
+    "build:js": "uglifyjs src/assets/scripts.js -o assets/scripts.min.js",
+    "build:html": "html-minifier --collapse-whitespace --remove-comments --remove-empty-attributes --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes src/index.html -o index.html",
+    "watch:css": "onchange \"src/assets/style.scss\" -- npm run build:css",
+    "watch:js": "onchange \"src/assets/scripts.js\" -- npm run build:js",
+    "watch:html": "onchange \"src/index.html\" -- npm run build:html"
+  },
+  "keywords": [
+    "portfolio",
+    "resume",
+    "webdev"
+  ],
+  "author": "Brendan O'Neil",
+  "license": "ISC",
+  "devDependencies": {
+    "html-minifier": "^3.5.14",
+    "onchange": "^3.3.0",
+    "uglify-js": "^3.3.20"
+  }
+}
