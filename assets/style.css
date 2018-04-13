@@ -3,11 +3,8 @@ body, html {
   color: white;
   font-family: Geneva, Verdana, sans-serif;
   width: 100%;
-  height: 100%;
+  overflow: visible;
   margin: 0;
-}
-body p, html p {
-  line-height: 1.5;
 }
 
 h1 {
@@ -16,11 +13,12 @@ h1 {
 
 h2, h3 {
   display: inline-block;
-  border-radius: 20px;
+  margin: 0;
   padding: 0.5em;
 }
 
 p {
+  line-height: 1.5;
   margin: 0;
   font-size: 1em;
 }
@@ -28,7 +26,11 @@ p {
 ul {
   list-style: none;
   margin: 0;
-  padding: 0 10%;
+  padding: 0;
+}
+
+li {
+  margin: 10px;
 }
 
 a {
@@ -51,48 +53,87 @@ a:active {
 header {
   position: relative;
   z-index: 3;
-  height: 100vh;
+  height: 90vh;
   background-color: #414042;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+nav {
+  background: #414042;
+  justify-content: space-between;
+  height: 10vh;
+  position: sticky;
+  z-index: 2;
+  top: -1px;
+}
 @media screen and (min-width: 600px) {
-  header {
-    height: 93vh;
+  nav {
+    display: flex;
   }
 }
 
-nav ul {
+.navbar-logo {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.expand-button {
+  display: none;
+}
+@media screen and (max-width: 599px) {
+  .expand-button {
+    display: inline;
+    font-size: 20px;
+  }
+}
+
+.navbar-items {
   display: inline-block;
-  justify-content: space-between;
   height: 100%;
 }
 @media screen and (max-width: 599px) {
-  nav {
-    position: fixed;
-    z-index: 2;
-    transform: translateX(-165px);
-    top: 20px;
+  .navbar-items {
+    position: absolute;
+    top: 10vh;
     left: 0;
     width: 200px;
   }
 }
 @media screen and (min-width: 600px) {
-  nav {
-    height: 7vh;
-  }
-  nav ul {
+  .navbar-items {
+    position: static;
+    bottom: 0;
     display: flex;
     background: #414042;
+    padding: 0;
   }
-  nav li {
+  .navbar-items li {
     padding: 25% 0;
   }
-  nav a {
+  .navbar-items a {
     font-size: 1.5em;
   }
+}
+
+.sidebar {
+  transform: translateX(-165px);
+  animation: all 0.5s;
+}
+
+@media screen and (max-width: 599px) {
+  .sidebar-background {
+    width: 200px;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    height: 120%;
+  }
+}
+
+.sidebar-open {
+  transform: translateX(0);
 }
 
 section {
@@ -132,29 +173,18 @@ footer p {
   text-align: center;
 }
 
-@media screen and (max-width: 599px) {
-  .sidebar-background {
-    width: 200px;
-    display: inline-block;
-    position: absolute;
-    transform: translateX(-165px);
-    z-index: 1;
-    height: 120%;
-  }
-}
-
-#blue {
+.blue {
   background: #54c0dc;
 }
 
-#orange {
+.orange {
   background: #f3ad1d;
 }
 
-#red {
+.red {
   background: #ee8d76;
 }
 
-#purple {
+.purple {
   background: #a967aa;
 }
