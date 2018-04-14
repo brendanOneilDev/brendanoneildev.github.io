@@ -99,12 +99,17 @@ nav {
     position: sticky;
     z-index: 2;
     top: -1px;
+    transition: all .3s ease-in-out;
     @include phone-screen {
 
     }
     @include small {
         display: flex;
     }
+}
+
+.navbar-up {
+    transform: translateY(-10vh);
 }
 
 .navbar-logo {
@@ -120,12 +125,13 @@ nav {
     display: none;
     @include phone-screen {
         display: inline;
+        padding: 10px;
         font-size: 20px;
     }
 }
 
 .expand-button:hover {
-
+    cursor: pointer;
 }
 
 .navbar-items {
@@ -154,7 +160,7 @@ nav {
 
 .sidebar {
     transform: translateX(-165px);
-    animation: all .5s;
+    transition: all .3s ease-in-out;
 }
 
 .sidebar-background {
