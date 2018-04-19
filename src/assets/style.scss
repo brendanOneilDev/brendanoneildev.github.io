@@ -8,6 +8,7 @@ $accent-purple: #a967aa;
 $accent-orange: #f3ad1d;
 $text-color: white;
 $text-font-size: 1em;
+$section-height-mobile: 100vh;
 
 @mixin phone-screen {
     @media screen and (max-width: 599px) { @content; }
@@ -30,7 +31,6 @@ body, html {
     color: $text-color;
     font-family: Geneva, Verdana, sans-serif;
     width: 100%;
-    // height: 100%;
     overflow: visible;
     margin: 0;
 }
@@ -64,7 +64,7 @@ li {
 a {
     font-size: 1.2em;
     font-weight: 700;
-    display: block;
+    display: inline-block;
     color: $text-color;
     text-decoration: none;
 }
@@ -96,6 +96,7 @@ nav {
     background: $navbar;
     justify-content: space-between;
     height: 10vh;
+    // border: 1px solid $navbar;
     position: sticky;
     z-index: 2;
     top: -1px;
@@ -150,7 +151,7 @@ nav {
         background: $navbar;
         padding: 0;
         li {
-            padding: 25% 0;
+            padding: 0;
         }
         a {
             font-size: 1.5em;
@@ -169,7 +170,7 @@ nav {
         display: inline-block;
         position: absolute;
         z-index: 1;
-        height: 120%;
+        height: $section-height-mobile;
     }
 }
 
@@ -178,7 +179,8 @@ nav {
 }
 
 section {
-    min-height: 120vh;
+    min-height: $section-height-mobile;
+    overflow: hidden;
 }
 
 footer p {
