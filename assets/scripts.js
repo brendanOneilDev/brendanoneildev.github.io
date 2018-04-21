@@ -1,29 +1,23 @@
 var animated = document.querySelectorAll(".sidebar");
 var sidebarButton = document.querySelector(".expand-button");
 var anchor = document.querySelectorAll("nav a");
+var contentDim = document.querySelector(".sidebar-dim");
 
 var hasScrolled = false;
 var prevScrollPos = window.pageYOffset;
 var minScroll = 15;
 
 sidebarButton.addEventListener("click", function() {
-    for(var i = 0; i < animated.length; i++) {
-        animated[i].classList.toggle("sidebar-open");
-    }
+    hideSidebar();
+});
+
+contentDim.addEventListener("click", function() {
+    hideSidebar();
 });
 
 window.onscroll = function() {
     hasScrolled = true;
 };
-
-// for(var i = 0; i < anchor.length; i++) {
-//     anchor[i].addEventListener("click", function() {
-//         hideSidebar();
-//         setTimeout(function() {
-//             document.querySelector("nav").classList.add("navbar-up");
-//         }, 251);
-//     });
-// };
 
 setInterval(function() {
     if (hasScrolled) {
@@ -52,8 +46,9 @@ function hideNavbar() {
 
 function hideSidebar() {
     for(var i = 0; i < animated.length; i++) {
-        animated[i].classList.toggle("sidebar-open");
+        animated[i].classList.toggle("sidebar--open");
     }
+    contentDim.classList.toggle("sidebar-dim--active");
 }
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
