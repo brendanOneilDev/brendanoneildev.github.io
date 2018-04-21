@@ -132,13 +132,16 @@ nav {
   transition: all 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 599px) {
+.sidebar-background {
+  width: 200px;
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+}
+@media screen and (min-width: 600px) {
   .sidebar-background {
-    width: 200px;
-    display: inline-block;
-    position: absolute;
-    z-index: 1;
-    height: 100vh;
+    display: none;
   }
 }
 
@@ -151,6 +154,11 @@ section {
   overflow: hidden;
 }
 
+footer {
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.19), 0 -6px 6px rgba(0, 0, 0, 0.23);
+}
 footer p {
   padding: 10px 0;
   background: #939598;
@@ -185,17 +193,17 @@ footer p {
 }
 
 .blue {
-  background: #54c0dc;
+  background: linear-gradient(#54c0dc, #f3ad1d 98%);
 }
 
 .orange {
-  background: #f3ad1d;
+  background: linear-gradient(#f3ad1d, #ee8d76 98%);
 }
 
 .red {
-  background: #ee8d76;
+  background: linear-gradient(#ee8d76, #a967aa 98%);
 }
 
 .purple {
-  background: #a967aa;
+  background: linear-gradient(#a967aa, #939598 98%);
 }

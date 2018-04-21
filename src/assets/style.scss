@@ -165,12 +165,14 @@ nav {
 }
 
 .sidebar-background {
-    @include phone-screen {
-        width: 200px;
-        display: inline-block;
-        position: absolute;
-        z-index: 1;
-        height: $section-height-mobile;
+    width: 200px;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    //box-shadow: 2px 2px 6px rgba(0,0,0,0.16), 2px 2px 6px rgba(0,0,0,0.23);
+    height: 100%;
+    @include small() {
+        display: none;
     }
 }
 
@@ -183,9 +185,14 @@ section {
     overflow: hidden;
 }
 
-footer p {
-    padding: 10px 0;
-    background: $light-neutral;
+footer {
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.19), 0 -6px 6px rgba(0,0,0,0.23);
+    p {
+        padding: 10px 0;
+        background: $light-neutral;
+    }
 }
 
 .container {
@@ -213,14 +220,14 @@ footer p {
 }
 
 .blue {
-    background: $accent-blue;
+    background: linear-gradient($accent-blue, $accent-orange 98%);//$accent-blue;
 }
 .orange {
-    background: $accent-orange;
+    background: linear-gradient($accent-orange, $accent-red 98%);//$accent-orange;
 }
 .red {
-    background: $accent-red;
+    background: linear-gradient($accent-red, $accent-purple 98%);//$accent-red;
 }
 .purple {
-    background: $accent-purple;
+    background: linear-gradient($accent-purple, $light-neutral 98%);//$accent-purple;
 }
