@@ -29,7 +29,7 @@ $section-height-mobile: 100vh;
 body, html {
     background: $background;
     color: $text-color;
-    font-family: Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     width: 100%;
     overflow: visible;
     margin: 0;
@@ -126,9 +126,9 @@ nav {
 .expand-button {
     display: none;
     @include phone-screen {
-        display: inline;
-        padding: 10px;
-        font-size: 20px;
+        display: inline-block;
+        padding: .5em;
+        vertical-align: bottom;
     }
 }
 
@@ -239,6 +239,14 @@ footer {
 
 .heading {
     text-align: center;
+}
+
+.blue-text {
+    color: $accent-blue;
+}
+
+.orange-text {
+    color: $accent-orange;
 }
 
 .blue {

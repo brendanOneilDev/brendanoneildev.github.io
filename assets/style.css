@@ -1,7 +1,7 @@
 body, html {
   background: #58595b;
   color: white;
-  font-family: Geneva, Verdana, sans-serif;
+  font-family: "Roboto", sans-serif;
   width: 100%;
   overflow: visible;
   margin: 0;
@@ -90,9 +90,9 @@ nav {
 }
 @media screen and (max-width: 599px) {
   .expand-button {
-    display: inline;
-    padding: 10px;
-    font-size: 20px;
+    display: inline-block;
+    padding: 0.5em;
+    vertical-align: bottom;
   }
 }
 
@@ -212,6 +212,14 @@ footer p {
 
 .heading {
   text-align: center;
+}
+
+.blue-text {
+  color: #54c0dc;
+}
+
+.orange-text {
+  color: #f3ad1d;
 }
 
 .blue {
