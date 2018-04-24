@@ -12,7 +12,8 @@ h1 {
   margin: 0;
 }
 
-h2, h3 {
+h2,
+h3 {
   display: inline-block;
   margin: 0;
   padding: 0.5em;
@@ -32,6 +33,9 @@ ul {
 
 li {
   margin: 10px;
+}
+li img {
+  max-height: 150px;
 }
 
 a {
@@ -53,7 +57,7 @@ a:active {
 
 header {
   position: relative;
-  z-index: 3;
+  z-index: 4;
   height: 90vh;
   background-color: #414042;
   color: white;
@@ -64,15 +68,17 @@ header {
 nav {
   background: #414042;
   justify-content: space-between;
+  align-items: center;
   height: 10vh;
   position: sticky;
-  z-index: 2;
+  z-index: 3;
   top: -1px;
   transition: all 0.3s ease-in-out;
 }
 @media screen and (min-width: 600px) {
   nav {
     display: flex;
+    padding: 0 5%;
   }
 }
 
@@ -82,9 +88,23 @@ nav {
 
 .navbar-logo {
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
+@media screen and (max-width: 599px) {
+  .navbar-logo {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+@media screen and (min-width: 600px) {
+  .navbar-logo {
+    height: fit-content;
+    justify-content: left;
+  }
+  .navbar-logo h3 {
+    font-size: 1.4em;
+  }
+}
+
 .expand-button {
   display: none;
 }
@@ -102,7 +122,6 @@ nav {
 
 .navbar-items {
   display: inline-block;
-  height: 100%;
 }
 @media screen and (max-width: 599px) {
   .navbar-items {
@@ -117,6 +136,10 @@ nav {
     position: static;
     bottom: 0;
     display: flex;
+    justify-content: space-between;
+    width: 60%;
+    max-width: 500px;
+    height: fit-content;
     background: #414042;
     padding: 0;
   }
@@ -124,7 +147,7 @@ nav {
     padding: 0;
   }
   .navbar-items a {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 }
 
@@ -132,12 +155,17 @@ nav {
   transform: translateX(-165px);
   transition: all 0.3s ease-in-out;
 }
+@media screen and (min-width: 600px) {
+  .sidebar {
+    transform: translateX(0px);
+  }
+}
 
 .sidebar-background {
   width: 200px;
   display: inline-block;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   bottom: 0;
   margin: 0;
@@ -156,12 +184,17 @@ nav {
   visibility: hidden;
   position: fixed;
   top: 0;
-  z-index: 0;
+  z-index: 1;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   opacity: 0;
   transition: visibility 0s linear 0.5s, opacity 0.5s;
+}
+@media screen and (min-width: 600px) {
+  .sidebar-dim {
+    display: none;
+  }
 }
 
 .sidebar-dim--active {
@@ -180,7 +213,7 @@ section {
 
 footer {
   position: relative;
-  z-index: 3;
+  z-index: 4;
   box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.19), 0 -6px 6px rgba(0, 0, 0, 0.23);
 }
 footer p {
@@ -191,7 +224,21 @@ footer p {
 .flex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+}
+.flex li {
+  text-align: center;
+  width: 90%;
+}
+@media screen and (min-width: 600px) {
+  .flex li {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 900px) {
+  .flex li {
+    width: 30%;
+  }
 }
 
 .container {
@@ -208,6 +255,11 @@ footer p {
 @media screen and (min-width: 600px) {
   .container {
     max-width: 800px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .container {
+    max-width: 1100px;
   }
 }
 
@@ -232,17 +284,22 @@ footer p {
 }
 
 .blue {
-  background: linear-gradient(#54c0dc, #f3ad1d 98%);
+  background: linear-gradient(#54c0dc, #f3ad1d);
+}
+@media screen and (min-width: 600px) {
+  .blue {
+    background: #54c0dc;
+  }
 }
 
 .orange {
-  background: linear-gradient(#f3ad1d, #ee8d76 98%);
+  background: linear-gradient(#f3ad1d, #ee8d76);
 }
 
 .red {
-  background: linear-gradient(#ee8d76, #a967aa 98%);
+  background: linear-gradient(#ee8d76, #a967aa);
 }
 
 .purple {
-  background: linear-gradient(#a967aa, #939598 98%);
+  background: linear-gradient(#a967aa, #939598);
 }
